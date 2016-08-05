@@ -1,0 +1,42 @@
+﻿@model deploy.Models.Rating
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Rating</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Business.BusinessName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Business.BusinessName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StarReview)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StarReview)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TextReview)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TextReview)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.RatingID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
