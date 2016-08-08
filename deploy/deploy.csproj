@@ -212,6 +212,10 @@
     <Compile Include="Migrations\201608051414218_business.Designer.cs">
       <DependentUpon>201608051414218_business.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201608081341185_seed info.cs" />
+    <Compile Include="Migrations\201608081341185_seed info.Designer.cs">
+      <DependentUpon>201608081341185_seed info.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Business.cs" />
@@ -225,10 +229,14 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\jquery-1.9.1.min.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\clothes.jpg" />
+    <Content Include="Images\old-white-background.jpg" />
+    <Content Include="Images\restaurant-people.jpg" />
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -237,6 +245,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Properties\PublishProfiles\deploy20160804024956.pubxml" />
+    <None Include="Properties\PublishProfiles\deploy20160805023907 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -316,6 +325,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201608051414218_business.resx">
       <DependentUpon>201608051414218_business.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608081341185_seed info.resx">
+      <DependentUpon>201608081341185_seed info.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
