@@ -7,6 +7,8 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using deploy.Models;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace deploy.Controllers
 {
@@ -52,8 +54,12 @@ namespace deploy.Controllers
        // [Authorize(Roles = "canEdit")]
         public ActionResult Create([Bind(Include = "BusinessID,BusinessName,BusinessTypeID,Address,Hours,Phone,Menu")] Business business)
         {
+            UserManager<ApplicationUser> UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
+            var CurrentUser = UserManager.FindById(User.Identity.GetUserId());
+
             if (ModelState.IsValid)
             {
+                business.ApplicationUser = CurrentUser;
                 db.Businesses.Add(business);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -88,9 +94,24 @@ namespace deploy.Controllers
        // [Authorize(Roles = "canEdit")]
         public ActionResult Edit([Bind(Include = "BusinessID,BusinessName,BusinessTypeID,Address,Hours,Phone,Menu")] Business business)
         {
+            UserManager<ApplicationUser> UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
+            var CurrentUser = UserManager.FindById(User.Identity.GetUserId());
+
+            var oldBusiness = db.Businesses.Find(business.BusinessID);
+            if (oldBusiness.ApplicationUser != CurrentUser)
+            {
+                return new HttpUnauthorizedResult();
+            }
             if (ModelState.IsValid)
             {
-                db.Entry(business).State = EntityState.Modified;
+                // db.Entry(business).State = EntityState.Modified;
+                oldBusiness.BusinessName = business.BusinessName;
+                oldBusiness.BusinessTypeID = business.BusinessTypeID;
+                oldBusiness.Address = business.Address;
+                oldBusiness.Hours = business.Hours;
+                oldBusiness.Phone = business.Phone;
+                oldBusiness.Menu = business.Menu;
+
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

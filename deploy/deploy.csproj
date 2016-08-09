@@ -216,6 +216,22 @@
     <Compile Include="Migrations\201608081341185_seed info.Designer.cs">
       <DependentUpon>201608081341185_seed info.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201608081819175_seed rating.cs" />
+    <Compile Include="Migrations\201608081819175_seed rating.Designer.cs">
+      <DependentUpon>201608081819175_seed rating.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201608091357475_StarReviewID.cs" />
+    <Compile Include="Migrations\201608091357475_StarReviewID.Designer.cs">
+      <DependentUpon>201608091357475_StarReviewID.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201608091426548_yo.cs" />
+    <Compile Include="Migrations\201608091426548_yo.Designer.cs">
+      <DependentUpon>201608091426548_yo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201608091440438_stars.cs" />
+    <Compile Include="Migrations\201608091440438_stars.Designer.cs">
+      <DependentUpon>201608091440438_stars.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Business.cs" />
@@ -328,6 +344,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201608081341185_seed info.resx">
       <DependentUpon>201608081341185_seed info.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608081819175_seed rating.resx">
+      <DependentUpon>201608081819175_seed rating.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608091357475_StarReviewID.resx">
+      <DependentUpon>201608091357475_StarReviewID.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608091426548_yo.resx">
+      <DependentUpon>201608091426548_yo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608091440438_stars.resx">
+      <DependentUpon>201608091440438_stars.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

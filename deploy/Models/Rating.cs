@@ -9,7 +9,7 @@ namespace deploy.Models
     {
         public int RatingID { get; set; }
         public int BusinessID { get; set; }
-        public short? StarReview { get; set; }
+        public string Stars { get; set; }
         public string TextReview { get; set; }
 
 

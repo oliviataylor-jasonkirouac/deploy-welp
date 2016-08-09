@@ -37,7 +37,7 @@ namespace deploy.Migrations
 
         protected override void Seed(deploy.Models.ApplicationDbContext context)
         {
-             AddUserAndRole(context);
+            AddUserAndRole(context);
             context.Users.AddOrUpdate(b => b.UserName);
             //  This method will be called after migrating to the latest version.
 
@@ -56,11 +56,25 @@ namespace deploy.Migrations
                 new Models.BusinessType { BusinessTypeID = 1, BusinessTypeName = "Restaurant" },
                new Models.BusinessType { BusinessTypeID = 2, BusinessTypeName = "Shopping" }
                );
+
+
+            var user = context.Users.Single(u => u.UserName == "user1@contoso.com");
+
+
             context.Businesses.AddOrUpdate(
               b => b.BusinessName,
-             new Models.Business { BusinessName = "McDonalds", BusinessTypeID = 1 },
-             new Models.Business { BusinessName = "Chipotle", BusinessTypeID = 1 }
+             new Models.Business { BusinessName = "McDonalds", BusinessTypeID = 1, ApplicationUser = user },
+             new Models.Business { BusinessName = "Chipotle", BusinessTypeID = 1, ApplicationUser = user }
             );
+
+            //context.StarReview.AddOrUpdate(
+            //    b => b.StarReview,
+            //    new Models.Rating { StarReviewID = 1, StarReviewName = "*****" },
+            //    new Models.Rating { StarReviewID = 2, StarReviewName = "****" },
+            //    new Models.Rating { StarReviewID = 3, StarReviewName= "***" },
+            //    new Models.Rating { StarReviewID = 4, StarReview = "**" },
+            //    new Models.Rating { StarReviewID = 5, StarReview = "*" }
+            //   );
         }
     }
 }
